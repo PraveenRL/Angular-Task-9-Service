@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="bg-warning mt-2 text-center">
+        <h2 class="text-white pt-3">List Data</h2>
+        <button routerLink="/add-data" type="button" class="btn btn-primary my-3">Add</button>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 text-center">
+           <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr class="table-danger">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Delete</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = 'let list of bind'>
+                        <td>{{list.uname}}</td>
+                        <td>{{list.email}}</td>
+                        <td>{{list.contact}}</td> 
+                        <td><i class="material-icons" (click)="del(list)">delete</i></td>
+                        <td><a routerLink='/view/{{list.id}}'><i class="material-icons">remove_red_eye</i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
